@@ -10,7 +10,7 @@ endif()
 
 set(Launcher_CommonName "VladSaveljevLauncher")
 set(Launcher_DisplayName "Vlad Saveljev Launcher")
-set(Launcher_AppID "io.github.jopalauncher.JopaLauncher")
+set(Launcher_AppID "io.github.wijeddd.VladSaveljevLauncher")
 set(Launcher_Domain "pineconemc.ru")
 set(Launcher_Git "https://github.com/ElyPrismLauncher/Launcher")
 

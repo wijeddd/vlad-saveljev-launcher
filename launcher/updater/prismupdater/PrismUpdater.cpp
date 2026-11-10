@@ -971,13 +971,13 @@ void PrismUpdaterApp::backupAppDir()
     if (file_list.isEmpty()) {
         // best guess
         if (BuildConfig.BUILD_ARTIFACT.toLower().contains("linux")) {
-            file_list.append({ "JopaLauncher", "bin", "share", "lib" });
+            file_list.append({ "VladSaveljevLauncher", "bin", "share", "lib" });
         } else {  // windows by process of elimination
             file_list.append({
                 "jars",
-                "jopalauncher.exe",
-                "jopalauncher_filelink.exe",
-                "jopalauncher_updater.exe",
+                "vladsaveljevlauncher.exe",
+                "vladsaveljevlauncher_filelink.exe",
+                "vladsaveljevlauncher_updater.exe",
                 "qtlogging.ini",
                 "imageformats",
                 "iconengines",
