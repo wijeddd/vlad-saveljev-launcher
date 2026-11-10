@@ -8,7 +8,7 @@ if(UNIX)
     endif()
 endif()
 
-set(Launcher_CommonName "JopaLauncher")
+set(Launcher_CommonName "VladSaveljevLauncher")
 set(Launcher_DisplayName "Vlad Saveljev Launcher")
 set(Launcher_AppID "io.github.jopalauncher.JopaLauncher")
 set(Launcher_Domain "pineconemc.ru")
