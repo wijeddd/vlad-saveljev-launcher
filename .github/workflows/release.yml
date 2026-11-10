@@ -55,39 +55,39 @@ jobs:
 
           tar --exclude='.git' -czf JopaLauncher-${{ env.VERSION }}.tar.gz JopaLauncher-${{ env.VERSION }}
 
-          for d in JopaLauncher-Windows-MSVC*; do
+          for d in VladSaveljevLauncher-Windows-MSVC*; do
             cd "${d}" || continue
             LEGACY="$(echo -n ${d} | grep -o Legacy || true)"
             ARM64="$(echo -n ${d} | grep -o arm64 || true)"
             INST="$(echo -n ${d} | grep -o Setup || true)"
             PORT="$(echo -n ${d} | grep -o Portable || true)"
-            NAME="JopaLauncher-Windows-MSVC"
+            NAME="VladSaveljevLauncher-Windows-MSVC"
             test -z "${LEGACY}" || NAME="${NAME}-Legacy"
             test -z "${ARM64}" || NAME="${NAME}-arm64"
             test -z "${PORT}" || NAME="${NAME}-Portable"
-            test -z "${INST}" || mv JopaLauncher-*.exe ../${NAME}-Setup-${{ env.VERSION }}.exe
+            test -z "${INST}" || mv VladSaveljevLauncher-*.exe ../${NAME}-Setup-${{ env.VERSION }}.exe
             test -n "${INST}" || zip -r -9 "../${NAME}-${{ env.VERSION }}.zip" *
             cd ..
           done
 
-          for d in JopaLauncher-Windows-MinGW-w64*; do
+          for d in VladSaveljevLauncher-Windows-MinGW-w64*; do
             cd "${d}" || continue
             INST="$(echo -n ${d} | grep -o Setup || true)"
             PORT="$(echo -n ${d} | grep -o Portable || true)"
-            NAME="JopaLauncher-Windows-MinGW-w64"
+            NAME="VladSaveljevLauncher-Windows-MinGW-w64"
             test -z "${PORT}" || NAME="${NAME}-Portable"
-            test -z "${INST}" || mv JopaLauncher-*.exe ../${NAME}-Setup-${{ env.VERSION }}.exe
+            test -z "${INST}" || mv VladSaveljevLauncher-*.exe ../${NAME}-Setup-${{ env.VERSION }}.exe
             test -n "${INST}" || zip -r -9 "../${NAME}-${{ env.VERSION }}.zip" *
             cd ..
           done
 
-          for d in JopaLauncher-Windows-MinGW-arm64*; do
+          for d in VladSaveljevLauncher-Windows-MinGW-arm64*; do
             cd "${d}" || continue
             INST="$(echo -n ${d} | grep -o Setup || true)"
             PORT="$(echo -n ${d} | grep -o Portable || true)"
-            NAME="JopaLauncher-Windows-MinGW-arm64"
+            NAME="VladSaveljevLauncher-Windows-MinGW-arm64"
             test -z "${PORT}" || NAME="${NAME}-Portable"
-            test -z "${INST}" || mv JopaLauncher-*.exe ../${NAME}-Setup-${{ env.VERSION }}.exe
+            test -z "${INST}" || mv VladSaveljevLauncher-*.exe ../${NAME}-Setup-${{ env.VERSION }}.exe
             test -n "${INST}" || zip -r -9 "../${NAME}-${{ env.VERSION }}.zip" *
             cd ..
           done
@@ -98,7 +98,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           tag_name: ${{ github.ref }}
-          name: JopaLauncher ${{ env.VERSION }}
+          name: Vlad Saveljev Launcher ${{ env.VERSION }}
           draft: true
           prerelease: false
           fail_on_unmatched_files: true
@@ -109,18 +109,18 @@ jobs:
             JopaLauncher-Linux-aarch64.AppImage.zsync
             JopaLauncher-Linux-Qt6-Portable-${{ env.VERSION }}.tar.gz
             JopaLauncher-Linux-aarch64-Qt6-Portable-${{ env.VERSION }}.tar.gz
-            JopaLauncher-Windows-MinGW-w64-${{ env.VERSION }}.zip
-            JopaLauncher-Windows-MinGW-w64-Portable-${{ env.VERSION }}.zip
-            JopaLauncher-Windows-MinGW-w64-Setup-${{ env.VERSION }}.exe
-            JopaLauncher-Windows-MinGW-arm64-${{ env.VERSION }}.zip
-            JopaLauncher-Windows-MinGW-arm64-Portable-${{ env.VERSION }}.zip
-            JopaLauncher-Windows-MinGW-arm64-Setup-${{ env.VERSION }}.exe
-            JopaLauncher-Windows-MSVC-arm64-${{ env.VERSION }}.zip
-            JopaLauncher-Windows-MSVC-arm64-Portable-${{ env.VERSION }}.zip
-            JopaLauncher-Windows-MSVC-arm64-Setup-${{ env.VERSION }}.exe
-            JopaLauncher-Windows-MSVC-${{ env.VERSION }}.zip
-            JopaLauncher-Windows-MSVC-Portable-${{ env.VERSION }}.zip
-            JopaLauncher-Windows-MSVC-Setup-${{ env.VERSION }}.exe
+            VladSaveljevLauncher-Windows-MinGW-w64-${{ env.VERSION }}.zip
+            VladSaveljevLauncher-Windows-MinGW-w64-Portable-${{ env.VERSION }}.zip
+            VladSaveljevLauncher-Windows-MinGW-w64-Setup-${{ env.VERSION }}.exe
+            VladSaveljevLauncher-Windows-MinGW-arm64-${{ env.VERSION }}.zip
+            VladSaveljevLauncher-Windows-MinGW-arm64-Portable-${{ env.VERSION }}.zip
+            VladSaveljevLauncher-Windows-MinGW-arm64-Setup-${{ env.VERSION }}.exe
+            VladSaveljevLauncher-Windows-MSVC-arm64-${{ env.VERSION }}.zip
+            VladSaveljevLauncher-Windows-MSVC-arm64-Portable-${{ env.VERSION }}.zip
+            VladSaveljevLauncher-Windows-MSVC-arm64-Setup-${{ env.VERSION }}.exe
+            VladSaveljevLauncher-Windows-MSVC-${{ env.VERSION }}.zip
+            VladSaveljevLauncher-Windows-MSVC-Portable-${{ env.VERSION }}.zip
+            VladSaveljevLauncher-Windows-MSVC-Setup-${{ env.VERSION }}.exe
             JopaLauncher-macOS-${{ env.VERSION }}.zip
             JopaLauncher-macOS-${{ env.VERSION }}.dmg
             JopaLauncher-${{ env.VERSION }}.tar.gz
